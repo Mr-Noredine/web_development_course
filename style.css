@@ -1,0 +1,520 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #111111;
+    line-height: 1.6;
+}
+
+/* ==================== HEADER / NAVIGATION ==================== */
+header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+nav ul li a {
+    color: #111111;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+    letter-spacing: 0.3px;
+}
+
+nav ul li a:hover {
+    color: #757575;
+}
+
+/* Sélecteur de langue */
+.lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 1rem;
+    background: #f5f5f5;
+    border-radius: 20px;
+}
+
+.lang-option {
+    color: #757575;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.85rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.lang-option:hover {
+    color: #111111;
+}
+
+.lang-option.active {
+    color: #111111;
+    font-weight: 600;
+}
+
+.lang-divider {
+    color: #d1d5db;
+    font-weight: 300;
+}
+
+/* Positionner les 2 derniers éléments à droite */
+nav ul li:nth-last-child(2) {
+    margin-left: auto;
+}
+
+/* Bouton de connexion */
+.btn-login {
+    margin-right: 0;
+    border: none;
+    background: #111111;
+    color: white;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 12px 24px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.btn-login:hover {
+    background: #3d3d3d;
+    transform: scale(1.02);
+}
+
+/* ==================== HERO SECTION ==================== */
+.hero {
+    background: #ffffff;
+    color: #111111;
+    padding: 120px 40px 100px;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    color: #111111;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    color: #757575;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+}
+
+.hero-features {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.feature-badge {
+    background: #f5f5f5;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    color: #111111;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+.hero-cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    padding: 16px 48px;
+    background: #111111;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary:hover {
+    background: #3d3d3d;
+    transform: scale(1.02);
+}
+
+.btn-secondary {
+    padding: 16px 48px;
+    background: transparent;
+    color: #111111;
+    border: 1.5px solid #111111;
+    border-radius: 30px;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.btn-secondary:hover {
+    background: #111111;
+    color: white;
+}
+
+/* ==================== SECTIONS GÉNÉRALES ==================== */
+.about-section,
+.features-section,
+.demo-section {
+    padding: 100px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.about-section {
+    background: #fafafa;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.content-grid.reverse {
+    grid-template-columns: 1fr 1fr;
+}
+
+.content-grid.reverse .image-content {
+    order: -1;
+}
+
+.text-content h2 {
+    font-size: 2.8rem;
+    margin-bottom: 2rem;
+    color: #111111;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+}
+
+.text-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #757575;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+.text-content strong {
+    color: #111111;
+    font-weight: 600;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 2.5rem;
+}
+
+.feature-list li {
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+    color: #111111;
+    font-weight: 400;
+}
+
+.feature-image,
+.demo-image {
+    width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+    border: 1px solid #e5e5e5;
+}
+
+.link-cta {
+    display: inline-block;
+    margin-top: 2rem;
+    color: #111111;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-bottom: 2px solid #111111;
+    padding-bottom: 4px;
+    transition: all 0.3s ease;
+    letter-spacing: 0.3px;
+}
+
+.link-cta:hover {
+    color: #757575;
+    border-color: #757575;
+}
+
+/* ==================== FEATURES SECTION ==================== */
+.features-section {
+    text-align: center;
+    background: #ffffff;
+}
+
+.features-section h2 {
+    font-size: 3rem;
+    margin-bottom: 4rem;
+    color: #111111;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+}
+
+.feature-card {
+    background: #fafafa;
+    padding: 3rem 2rem;
+    border-radius: 0;
+    border: 1px solid #e5e5e5;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    background: #f5f5f5;
+    transform: translateY(-4px);
+}
+
+.feature-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #111111;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+}
+
+.feature-card p {
+    color: #757575;
+    line-height: 1.7;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* ==================== CTA SECTION ==================== */
+.cta-section {
+    background: #111111;
+    color: white;
+    text-align: center;
+    padding: 100px 40px;
+}
+
+.cta-section h2 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.cta-section p {
+    font-size: 1.3rem;
+    margin-bottom: 3rem;
+    color: #d1d1d1;
+    font-weight: 400;
+}
+
+.btn-large {
+    padding: 18px 56px;
+    font-size: 1.1rem;
+    background: white;
+    color: #111111;
+}
+
+.btn-large:hover {
+    background: #f5f5f5;
+}
+
+/* ==================== FOOTER ==================== */
+footer {
+    background: #fafafa;
+    color: #111111;
+    padding: 60px 40px;
+    border-top: 1px solid #e5e5e5;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.author-block {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.author-block p {
+    color: #757575;
+    font-size: 0.95rem;
+    font-weight: 400;
+}
+
+.author-block strong {
+    color: #111111;
+    font-weight: 600;
+}
+
+.author-icon {
+    font-size: 1.5rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 3rem;
+}
+
+.footer-links a {
+    color: #757575;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+.footer-links a:hover {
+    color: #111111;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 1024px) {
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+    
+    .content-grid,
+    .content-grid.reverse {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        gap: 20px;
+        padding: 0 20px;
+    }
+    
+    nav ul li a {
+        font-size: 0.85rem;
+    }
+    
+    .hero {
+        padding: 80px 20px 60px;
+    }
+    
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .hero-features {
+        gap: 0.8rem;
+    }
+    
+    .feature-badge {
+        font-size: 0.8rem;
+        padding: 10px 18px;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        padding: 14px 36px;
+        font-size: 0.95rem;
+    }
+    
+    .about-section,
+    .features-section,
+    .demo-section {
+        padding: 60px 20px;
+    }
+    
+    .text-content h2 {
+        font-size: 2rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-links {
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .text-content h2 {
+        font-size: 1.6rem;
+    }
+    
+    .btn-login {
+        padding: 10px 20px;
+        font-size: 0.85rem;
+    }
+}
