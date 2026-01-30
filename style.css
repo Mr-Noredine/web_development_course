@@ -518,3 +518,47 @@ footer {
         font-size: 0.85rem;
     }
 }
+
+/* Ajout au CSS existant */
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 2.5rem;
+}
+
+.feature-list li {
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+    color: #111111;
+    font-weight: 400;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.list-icon {
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.list-icon svg {
+    stroke: #111111;
+}
+
+.feature-icon {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.feature-icon img {
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.feature-card:hover .feature-icon img {
+    opacity: 1;
+}
+
