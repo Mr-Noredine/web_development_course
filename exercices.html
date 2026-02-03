@@ -1,26 +1,309 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prep your TCF</title>
+    <title>Exercices – Prépa TCF</title>
+    <meta name="description" content="Pratiquez le français avec nos exercices interactifs en conjugaison, grammaire, compréhension orale et écrite.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_exercices.css">
 </head>
 <body>
+
+    <!-- HEADER -->
     <header>
-        <dev>
-            <nav>
-                <ul>
-                    <li><a href="main-fr.html">Accueil</a></li>
-                    <li><a href="quiz.html">Leçons</a></li>
-                    <li><a href="exercices.html">Exercices</a></li>
-                    <!-- <li><a href="tests.html">Tests blancs</a></li>
-                    <li><a href="progress.html">Suivi de progression</a></li> -->
-                    <li>FR-<a href="main-en.html">EN</a></li>
-                </ul>
-            </nav>
-        </dev>
+        <nav>
+            <ul>
+                <li><a href="main-fr.html">Accueil</a></li>
+                <li><a href="quiz.html">Leçons</a></li>
+                <li><a href="exercices.html" class="nav-active">Exercices</a></li>
+                <li>
+                    <div class="lang-switcher">
+                        <a href="main-fr.html" class="lang-option" data-lang="fr">FR</a>
+                        <span class="lang-divider">|</span>
+                        <a href="main-en.html" class="lang-option" data-lang="en">EN</a>
+                    </div>
+                </li>
+                <li><button type="button" class="btn-login">Connexion</button></li>
+            </ul>
+        </nav>
     </header>
 
+    <!-- MAIN -->
+    <main>
+
+        <!-- PAGE HERO -->
+        <section class="page-hero">
+            <div class="page-hero-content">
+                <span class="page-hero-label">Pratique</span>
+                <h1>Exercices</h1>
+                <p>Testez vos connaissances avec des exercices interactifs adaptés à votre niveau.</p>
+            </div>
+        </section>
+
+        <!-- TABS CATÉGORIES -->
+        <section class="tabs-section">
+            <div class="tabs-container">
+                <button class="tab-btn active" data-category="all">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect></svg>
+                    Tous
+                </button>
+                <button class="tab-btn" data-category="conjugaison">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                    Conjugaison
+                </button>
+                <button class="tab-btn" data-category="grammaire">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                    Grammaire
+                </button>
+                <button class="tab-btn" data-category="co">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                    Compréhension Orale
+                </button>
+                <button class="tab-btn" data-category="ce">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-1H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-1h7z"></path></svg>
+                    Compréhension Écrite
+                </button>
+            </div>
+        </section>
+
+        <!-- EXERCICE MIS EN AVANT -->
+        <section class="featured-exercise">
+            <div class="featured-ex-inner">
+                <div class="featured-ex-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1468533344113-50a2e8a08fb8?w=800&q=80"
+                        alt="Des feuilles de papier avec des exercices de français écris à la main, représentant la pratique de la grammaire française"
+                        loading="lazy"
+                    >
+                    <span class="featured-badge">Nouveau</span>
+                </div>
+                <div class="featured-ex-text">
+                    <div class="ex-meta-row">
+                        <span class="ex-category-tag">Conjugaison</span>
+                        <span class="ex-difficulty easy">Facile</span>
+                    </div>
+                    <span class="ex-level-label">Niveau A2</span>
+                    <h2>Le présent de l'indicatif – Verbes réguliers</h2>
+                    <p>
+                        Conjuguez les verbes réguliers en -er, -ir et -re dans des phrases complètes.
+                        Parfait pour renforcer vos bases avant de tackler les verbes irréguliers.
+                    </p>
+                    <div class="ex-stats">
+                        <span class="stat-item">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            10 min
+                        </span>
+                        <span class="stat-item">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"></circle><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            15 questions
+                        </span>
+                        <span class="stat-item">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+                            1 892 tentatives
+                        </span>
+                    </div>
+                    <button class="btn-primary">Démarrer l'exercice</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- GRILLE D'EXERCICES -->
+        <section class="exercises-grid-section">
+            <div class="exercises-grid">
+
+                <!-- Exercice 1 -->
+                <article class="exercise-card" data-category="conjugaison">
+                    <div class="ex-card-header">
+                        <span class="ex-category-tag">Conjugaison</span>
+                        <span class="ex-difficulty medium">Moyen</span>
+                    </div>
+                    <h3>Le passé composé – Auxiliaire "avoir"</h3>
+                    <p>Formez des phrases au passé composé avec les verbes qui se conjuguent avec "avoir".</p>
+                    <div class="ex-card-footer">
+                        <span class="ex-card-meta">A2 · 12 min · 10 questions</span>
+                        <button class="btn-start">Commencer</button>
+                    </div>
+                </article>
+
+                <!-- Exercice 2 -->
+                <article class="exercise-card" data-category="grammaire">
+                    <div class="ex-card-header">
+                        <span class="ex-category-tag">Grammaire</span>
+                        <span class="ex-difficulty easy">Facile</span>
+                    </div>
+                    <h3>Les articles partitifs</h3>
+                    <p>Complétez les phrases avec le bon article partitif : du, de la, des, de.</p>
+                    <div class="ex-card-footer">
+                        <span class="ex-card-meta">A1 · 8 min · 12 questions</span>
+                        <button class="btn-start">Commencer</button>
+                    </div>
+                </article>
+
+                <!-- Exercice 3 -->
+                <article class="exercise-card" data-category="co">
+                    <div class="ex-card-header">
+                        <span class="ex-category-tag">Compréhension Orale</span>
+                        <span class="ex-difficulty medium">Moyen</span>
+                    </div>
+                    <h3>Dialogue au café</h3>
+                    <p>Écoutez le dialogue entre deux amis dans un café et répondez aux questions.</p>
+                    <div class="ex-card-footer">
+                        <span class="ex-card-meta">B1 · 15 min · 8 questions</span>
+                        <button class="btn-start">Commencer</button>
+                    </div>
+                </article>
+
+                <!-- Exercice 4 -->
+                <article class="exercise-card" data-category="ce">
+                    <div class="ex-card-header">
+                        <span class="ex-category-tag">Compréhension Écrite</span>
+                        <span class="ex-difficulty easy">Facile</span>
+                    </div>
+                    <h3>Un email de bienvenue</h3>
+                    <p>Lisez un email de bienvenue d'une école de langues et répondez aux questions.</p>
+                    <div class="ex-card-footer">
+                        <span class="ex-card-meta">A2 · 10 min · 6 questions</span>
+                        <button class="btn-start">Commencer</button>
+                    </div>
+                </article>
+
+                <!-- Exercice 5 -->
+                <article class="exercise-card" data-category="grammaire">
+                    <div class="ex-card-header">
+                        <span class="ex-category-tag">Grammaire</span>
+                        <span class="ex-difficulty hard">Difficile</span>
+                    </div>
+                    <h3>Le subjonctif dans les phrases</h3>
+                    <p>Utilisez le subjonctif présent dans des expressions de volonté et d'émotion.</p>
+                    <div class="ex-card-footer">
+                        <span class="ex-card-meta">B2 · 20 min · 14 questions</span>
+                        <button class="btn-start">Commencer</button>
+                    </div>
+                </article>
+
+                <!-- Exercice 6 -->
+                <article class="exercise-card" data-category="co">
+                    <div class="ex-card-header">
+                        <span class="ex-category-tag">Compréhension Orale</span>
+                        <span class="ex-difficulty hard">Difficile</span>
+                    </div>
+                    <h3>Bulletin météo en français</h3>
+                    <p>Écoutez un bulletin météo et identifiez les informations importantes.</p>
+                    <div class="ex-card-footer">
+                        <span class="ex-card-meta">B1 · 18 min · 10 questions</span>
+                        <button class="btn-start">Commencer</button>
+                    </div>
+                </article>
+
+                <!-- Exercice 7 -->
+                <article class="exercise-card" data-category="ce">
+                    <div class="ex-card-header">
+                        <span class="ex-category-tag">Compréhension Écrite</span>
+                        <span class="ex-difficulty medium">Moyen</span>
+                    </div>
+                    <h3>Article de journal</h3>
+                    <p>Lisez un extrait de journal et analysez les arguments présentés.</p>
+                    <div class="ex-card-footer">
+                        <span class="ex-card-meta">B1 · 22 min · 8 questions</span>
+                        <button class="btn-start">Commencer</button>
+                    </div>
+                </article>
+
+                <!-- Exercice 8 -->
+                <article class="exercise-card" data-category="conjugaison">
+                    <div class="ex-card-header">
+                        <span class="ex-category-tag">Conjugaison</span>
+                        <span class="ex-difficulty hard">Difficile</span>
+                    </div>
+                    <h3>Le conditionnel passé</h3>
+                    <p>Formez des phrases avec le conditionnel passé pour exprimer des hypothèses.</p>
+                    <div class="ex-card-footer">
+                        <span class="ex-card-meta">C1 · 25 min · 12 questions</span>
+                        <button class="btn-start">Commencer</button>
+                    </div>
+                </article>
+
+                <!-- Exercice 9 -->
+                <article class="exercise-card" data-category="grammaire">
+                    <div class="ex-card-header">
+                        <span class="ex-category-tag">Grammaire</span>
+                        <span class="ex-difficulty medium">Moyen</span>
+                    </div>
+                    <h3>Les conjonctions de coordination</h3>
+                    <p>Reliez des phrases indépendantes avec les bonnes conjonctions.</p>
+                    <div class="ex-card-footer">
+                        <span class="ex-card-meta">A2 · 10 min · 10 questions</span>
+                        <button class="btn-start">Commencer</button>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- CTA FINAL -->
+        <section class="cta-section">
+            <img
+                src="https://images.unsplash.com/photo-1513085745570-040d273d7e6f?w=1600&q=80"
+                alt="Une salle de classe lumineuse avec des livres et des fournitures scolaires"
+                class="cta-bg-image"
+            >
+            <div class="cta-overlay"></div>
+            <div class="cta-content">
+                <h2>Prêt à vous évaluer ?</h2>
+                <p>Créez un compte pour sauvegarder votre progression et accéder à tous les exercices.</p>
+                <button class="btn-primary btn-large">Créer mon compte gratuit</button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="author-block">
+                <p>Créé par <strong>MOHAMMEDI Noureddine</strong></p>
+            </div>
+            <div class="footer-links">
+                <a href="#about">À propos</a>
+                <a href="#contact">Contact</a>
+                <a href="#privacy">Mentions légales</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS : filtres catégories -->
+    <script>
+        // Lang switcher
+        const currentLang = document.documentElement.lang;
+        document.querySelectorAll('.lang-option').forEach(option => {
+            if (option.dataset.lang === currentLang) option.classList.add('active');
+        });
+
+        // Filtres catégories (tabs)
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const exCards = document.querySelectorAll('.exercise-card');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                tabBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const cat = btn.dataset.category;
+
+                exCards.forEach(card => {
+                    if (cat === 'all' || card.dataset.category === cat) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>

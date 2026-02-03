@@ -1,37 +1,293 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prep your TCF</title>
+    <title>Leçons – Prépa TCF</title>
+    <meta name="description" content="Parcourez toutes nos leçons de français organisées par niveau et par compétence pour préparer le TCF.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style_quiz.css">
 </head>
 <body>
+
+    <!-- HEADER -->
     <header>
-        <dev>
-            <nav>
-                <ul>
-                    <li><a href="main-fr.html">Accueil</a></li>
-                    <li><a href="quiz.html">Leçons</a></li>
-                    <li><a href="exercices.html">Exercices</a></li>
-                    <!-- <li><a href="tests.html">Tests blancs</a></li>
-                    <li><a href="progress.html">Suivi de progression</a></li> -->
-                    <li>FR-<a href="main-en.html">EN</a></li>
-                </ul>
-            </nav>
-        </dev>
+        <nav>
+            <ul>
+                <li><a href="main-fr.html">Accueil</a></li>
+                <li><a href="quiz.html" class="nav-active">Leçons</a></li>
+                <li><a href="exercices.html">Exercices</a></li>
+                <li>
+                    <div class="lang-switcher">
+                        <a href="main-fr.html" class="lang-option" data-lang="fr">FR</a>
+                        <span class="lang-divider">|</span>
+                        <a href="main-en.html" class="lang-option" data-lang="en">EN</a>
+                    </div>
+                </li>
+                <li><button type="button" class="btn-login">Connexion</button></li>
+            </ul>
+        </nav>
     </header>
 
-<body>
-    <div id="quiz">
-        <h1>Interactive Quiz | By CodePicker</h1>
-        <div id="question"></div>
-        <div id="options"></div>
-        <button id="submit">Submit</button>
-    </div>
+    <!-- MAIN -->
+    <main>
 
-    <script src="quiz.js"></script>
+        <!-- PAGE HERO -->
+        <section class="page-hero">
+            <div class="page-hero-content">
+                <span class="page-hero-label">Catalogue</span>
+                <h1>Leçons</h1>
+                <p>Apprenez le français à votre rythme avec nos leçons structurées, du niveau A1 à C2.</p>
+            </div>
+        </section>
 
+        <!-- FILTRES DE NIVEAU -->
+        <section class="filters-section">
+            <div class="filters-container">
+                <button class="filter-btn active" data-filter="all">Tous les niveaux</button>
+                <button class="filter-btn" data-filter="a1">A1</button>
+                <button class="filter-btn" data-filter="a2">A2</button>
+                <button class="filter-btn" data-filter="b1">B1</button>
+                <button class="filter-btn" data-filter="b2">B2</button>
+                <button class="filter-btn" data-filter="c1">C1</button>
+                <button class="filter-btn" data-filter="c2">C2</button>
+            </div>
+        </section>
+
+        <!-- LEÇON MISE EN AVANT -->
+        <section class="featured-lesson">
+            <div class="featured-inner">
+                <div class="featured-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1491750296711-ca938ed752c7?w=800&q=80"
+                        alt="Un livre de grammaire française ouvert sur une table, représentant le début d'une leçon de français"
+                        loading="lazy"
+                    >
+                    <span class="featured-badge">Populaire</span>
+                </div>
+                <div class="featured-text">
+                    <span class="lesson-level">A1 — Débutant</span>
+                    <h2>Introduction à la grammaire de base</h2>
+                    <p>
+                        Maîtrisez les fondamentaux de la grammaire française : les articles,
+                        les pronoms sujets, le présent de l'indicatif et les structures de phrases essentielles.
+                    </p>
+                    <div class="featured-meta">
+                        <span class="meta-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            12 minutes
+                        </span>
+                        <span class="meta-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-1H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-1h7z"></path></svg>
+                            5 exercices
+                        </span>
+                        <span class="meta-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+                            2 341 élèves
+                        </span>
+                    </div>
+                    <button class="btn-primary">Démarrer la leçon</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- GRILLE DE LEÇONS -->
+        <section class="lessons-grid-section">
+            <div class="lessons-grid">
+
+                <!-- Carte 1 -->
+                <article class="lesson-card" data-level="a1">
+                    <div class="lesson-card-top">
+                        <span class="lesson-level">A1</span>
+                        <span class="lesson-duration">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            8 min
+                        </span>
+                    </div>
+                    <h3>Les articles définis et indéfinis</h3>
+                    <p>Apprenez à utiliser correctement "le, la, les, un, une, des" dans vos phrases.</p>
+                    <a href="#" class="lesson-link">Voir la leçon</a>
+                </article>
+
+                <!-- Carte 2 -->
+                <article class="lesson-card" data-level="a1">
+                    <div class="lesson-card-top">
+                        <span class="lesson-level">A1</span>
+                        <span class="lesson-duration">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            10 min
+                        </span>
+                    </div>
+                    <h3>Les pronoms sujets</h3>
+                    <p>Maîtrisez je, tu, il, elle, nous, vous, ils, elles et leur utilisation.</p>
+                    <a href="#" class="lesson-link">Voir la leçon</a>
+                </article>
+
+                <!-- Carte 3 -->
+                <article class="lesson-card" data-level="a2">
+                    <div class="lesson-card-top">
+                        <span class="lesson-level">A2</span>
+                        <span class="lesson-duration">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            15 min
+                        </span>
+                    </div>
+                    <h3>Le passé composé</h3>
+                    <p>Formez des phrases au passé avec "avoir" et "être" comme auxiliaires.</p>
+                    <a href="#" class="lesson-link">Voir la leçon</a>
+                </article>
+
+                <!-- Carte 4 -->
+                <article class="lesson-card" data-level="a2">
+                    <div class="lesson-card-top">
+                        <span class="lesson-level">A2</span>
+                        <span class="lesson-duration">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            12 min
+                        </span>
+                    </div>
+                    <h3>Les questions en "est-ce que"</h3>
+                    <p>Formez des questions simples et complexes pour la communication quotidienne.</p>
+                    <a href="#" class="lesson-link">Voir la leçon</a>
+                </article>
+
+                <!-- Carte 5 -->
+                <article class="lesson-card" data-level="b1">
+                    <div class="lesson-card-top">
+                        <span class="lesson-level">B1</span>
+                        <span class="lesson-duration">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            18 min
+                        </span>
+                    </div>
+                    <h3>Le subjonctif présent</h3>
+                    <p>Utilisez le subjonctif dans les expressions de volonté, de doute et d'émotion.</p>
+                    <a href="#" class="lesson-link">Voir la leçon</a>
+                </article>
+
+                <!-- Carte 6 -->
+                <article class="lesson-card" data-level="b1">
+                    <div class="lesson-card-top">
+                        <span class="lesson-level">B1</span>
+                        <span class="lesson-duration">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            20 min
+                        </span>
+                    </div>
+                    <h3>Le conditionnel présent</h3>
+                    <p>Exprimez des souhaits, des hypothèses et des suggestions avec le conditionnel.</p>
+                    <a href="#" class="lesson-link">Voir la leçon</a>
+                </article>
+
+                <!-- Carte 7 -->
+                <article class="lesson-card" data-level="b2">
+                    <div class="lesson-card-top">
+                        <span class="lesson-level">B2</span>
+                        <span class="lesson-duration">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            22 min
+                        </span>
+                    </div>
+                    <h3>Les propositions relatives</h3>
+                    <p>Enrichissez votre expression avec les relatifs qui, que, dont, où.</p>
+                    <a href="#" class="lesson-link">Voir la leçon</a>
+                </article>
+
+                <!-- Carte 8 -->
+                <article class="lesson-card" data-level="c1">
+                    <div class="lesson-card-top">
+                        <span class="lesson-level">C1</span>
+                        <span class="lesson-duration">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            25 min
+                        </span>
+                    </div>
+                    <h3>Le style indirect</h3>
+                    <p>Rapportez des paroles et des questions avec les bonnes concordances de temps.</p>
+                    <a href="#" class="lesson-link">Voir la leçon</a>
+                </article>
+
+                <!-- Carte 9 -->
+                <article class="lesson-card" data-level="c2">
+                    <div class="lesson-card-top">
+                        <span class="lesson-level">C2</span>
+                        <span class="lesson-duration">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            30 min
+                        </span>
+                    </div>
+                    <h3>La concession et la nuance</h3>
+                    <p>Maîtrisez les structures avancées pour exprimer la nuance et la concession.</p>
+                    <a href="#" class="lesson-link">Voir la leçon</a>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- CTA FINAL -->
+        <section class="cta-section">
+            <img
+                src="https://images.unsplash.com/photo-1513085745570-040d273d7e6f?w=1600&q=80"
+                alt="Une salle de classe lumineuse avec des livres et des fournitures scolaires"
+                class="cta-bg-image"
+            >
+            <div class="cta-overlay"></div>
+            <div class="cta-content">
+                <h2>Envie de vous tester ?</h2>
+                <p>Passez aux exercices pratiques et évaluez ce que vous avez appris.</p>
+                <a href="exercices.html" class="btn-primary btn-large">Vers les exercices</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="author-block">
+                <p>Créé par <strong>MOHAMMEDI Noureddine</strong></p>
+            </div>
+            <div class="footer-links">
+                <a href="#about">À propos</a>
+                <a href="#contact">Contact</a>
+                <a href="#privacy">Mentions légales</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS : filtres de niveau -->
+    <script>
+        // Lang switcher
+        const currentLang = document.documentElement.lang;
+        document.querySelectorAll('.lang-option').forEach(option => {
+            if (option.dataset.lang === currentLang) option.classList.add('active');
+        });
+
+        // Filtres de niveau
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const lessonCards = document.querySelectorAll('.lesson-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // activer le bouton cliqué
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const level = btn.dataset.filter;
+
+                lessonCards.forEach(card => {
+                    if (level === 'all' || card.dataset.level === level) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>

@@ -3,34 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prep your TCF</title>
+    <title>Prépa TCF</title>
+    <meta name="description" content="Plateforme de préparation au TCF avec exercices, tests blancs et suivi de progression du niveau A1 à C2.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- HEADER -->
     <header>
         <nav>
             <ul>
                 <li><a href="main-fr.html">Accueil</a></li>
                 <li><a href="quiz.html">Leçons</a></li>
                 <li><a href="exercices.html">Exercices</a></li>
-                <!-- <li><a href="tests.html">Tests blancs</a></li>
-                <li><a href="progress.html">Suivi de progression</a></li> -->
                 <li>
                     <div class="lang-switcher">
-                        <a href="main-fr.html" class="lang-option active">FR</a>
+                        <a href="main-fr.html" class="lang-option" data-lang="fr">FR</a>
                         <span class="lang-divider">|</span>
-                        <a href="main-en.html" class="lang-option">EN</a>
+                        <a href="main-en.html" class="lang-option" data-lang="en">EN</a>
                     </div>
                 </li>
                 <li><button type="button" class="btn-login">Connexion</button></li>
             </ul>
         </nav>
     </header>
+
+    <!-- MAIN -->
     <main>
-        <!-- Hero Section -->
+
+        <!-- HERO -->
         <section class="hero">
             <div class="hero-content">
                 <h1>Préparation au TCF</h1>
@@ -42,117 +46,124 @@
             </div>
         </section>
 
-        <!-- About Section -->
+        <!-- IMAGE 1 : About Section (texte gauche, image droite) -->
         <section class="about-section">
             <div class="content-grid">
                 <div class="text-content">
                     <h2>Une plateforme complète pour réussir le TCF</h2>
                     <p>
-                        Bienvenue sur <strong>Prépa TCF</strong>, votre allié pour réussir l'examen du Test de Connaissance du Français.
+                        Bienvenue sur <strong>Prépa TCF</strong>, votre allié pour réussir
+                        l'examen du Test de Connaissance du Français.
                     </p>
                     <p>
-                        Notre plateforme vous accompagne étape par étape avec des leçons et des exercices adaptés à votre niveau, 
-                        de A1 (débutant) à C2 (maîtrise).
+                        Notre plateforme vous accompagne étape par étape avec des leçons
+                        et des exercices adaptés à votre niveau, de A1 (débutant) à C2 (maîtrise).
                     </p>
                     <ul class="feature-list">
                         <li>
                             <span class="list-icon">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                     <polyline points="20 6 9 17 4 12"></polyline>
                                 </svg>
                             </span>
-                            <strong>4 compétences couvertes</strong> : CO, CE, EE, EO
+                            <span><strong>4 compétences couvertes</strong> : CO, CE, EE, EO</span>
                         </li>
                         <li>
                             <span class="list-icon">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                     <polyline points="20 6 9 17 4 12"></polyline>
                                 </svg>
                             </span>
-                            <strong>Exercices progressifs</strong> : du plus simple au plus avancé
+                            <span><strong>Exercices progressifs</strong> : du plus simple au plus avancé</span>
                         </li>
                         <li>
                             <span class="list-icon">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                     <polyline points="20 6 9 17 4 12"></polyline>
                                 </svg>
                             </span>
-                            <strong>Feedback immédiat</strong> : comprendre vos erreurs pour progresser
+                            <span><strong>Feedback immédiat</strong> : comprendre vos erreurs pour progresser</span>
                         </li>
                         <li>
                             <span class="list-icon">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                     <polyline points="20 6 9 17 4 12"></polyline>
                                 </svg>
                             </span>
-                            <strong>Mode examen</strong> : entraînez-vous dans les conditions réelles
+                            <span><strong>Mode examen</strong> : entraînez-vous dans les conditions réelles</span>
                         </li>
                     </ul>
                 </div>
                 <div class="image-content">
+                    <!-- IMAGE 1 : Étudiant qui travaille -->
                     <img
-                        src="images/student-studying.jpg"
-                        alt="Étudiant en train de réviser le français"
+                        src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80"
+                        alt="Une étudiante concentrée qui révise ses leçons de français à l'aide d'un ordinateur portable dans une bibliothèque"
                         class="feature-image"
+                        loading="lazy"
                     >
                 </div>
             </div>
         </section>
 
-        <!-- Features Section -->
+        <!-- FEATURES -->
         <section class="features-section">
             <h2>Comment ça marche ?</h2>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <img src="icons/book.svg" alt="Exercices" width="48" height="48">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-1H2z"></path>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-1h7z"></path>
+                        </svg>
                     </div>
                     <h3>Exercices adaptés</h3>
-                    <p>
-                        Des centaines d'exercices classés par niveau et par compétence pour progresser à votre rythme.
-                    </p>
+                    <p>Des centaines d'exercices classés par niveau et par compétence pour progresser à votre rythme.</p>
                 </div>
-                
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <img src="icons/clock.svg" alt="Chronomètre" width="48" height="48">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
                     </div>
                     <h3>Mode chronométré</h3>
-                    <p>
-                        Entraînez-vous en conditions réelles avec un minuteur pour gérer votre temps efficacement.
-                    </p>
+                    <p>Entraînez-vous en conditions réelles avec un minuteur pour gérer votre temps efficacement.</p>
                 </div>
-                
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <img src="icons/chart.svg" alt="Progression" width="48" height="48">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="20" x2="18" y2="10"></line>
+                            <line x1="12" y1="20" x2="12" y2="4"></line>
+                            <line x1="6" y1="20" x2="6" y2="14"></line>
+                        </svg>
                     </div>
                     <h3>Suivi de progression</h3>
-                    <p>
-                        Visualisez vos scores, identifiez vos points faibles et suivez votre évolution dans le temps.
-                    </p>
+                    <p>Visualisez vos scores, identifiez vos points faibles et suivez votre évolution dans le temps.</p>
                 </div>
-                
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <img src="icons/target.svg" alt="Objectif" width="48" height="48">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
                     </div>
                     <h3>Corrections détaillées</h3>
-                    <p>
-                        Chaque exercice inclut des explications claires pour comprendre vos erreurs et vous améliorer.
-                    </p>
+                    <p>Chaque exercice inclut des explications claires pour comprendre vos erreurs et vous améliorer.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Demo Section -->
+        <!-- IMAGE 2 : Demo Section (image gauche, texte droite) -->
         <section class="demo-section">
             <div class="content-grid reverse">
                 <div class="image-content">
+                    <!-- IMAGE 2 : Interface / workspace -->
                     <img
-                        src="images/interface-dashboard.jpg"
-                        alt="Interface de la plateforme"
+                        src="https://images.unsplash.com/photo-1593506338-a385935cd131?w=800&q=80"
+                        alt="Un bureau de travail propre avec un ordinateur portable affichant une interface d'apprentissage en ligne, représentant l'expérience utilisateur de la plateforme"
                         class="demo-image"
+                        loading="lazy"
                     >
                 </div>
                 <div class="text-content">
@@ -161,23 +172,34 @@
                         Notre plateforme a été conçue pour être <strong>intuitive et agréable</strong> à utiliser.
                     </p>
                     <p>
-                        Après chaque activité, vous obtenez un score détaillé et un retour personnalisé pour comprendre 
-                        vos erreurs. Une pratique régulière est la meilleure façon de progresser rapidement et de gagner en confiance.
+                        Après chaque activité, vous obtenez un score détaillé et un retour
+                        personnalisé pour comprendre vos erreurs. Une pratique régulière est
+                        la meilleure façon de progresser rapidement et de gagner en confiance.
                     </p>
                     <a href="#exercises" class="link-cta">Explorer les exercices</a>
                 </div>
             </div>
         </section>
 
-        <!-- Final CTA Section -->
+        <!-- IMAGE 3 : CTA Section avec image en arrière-plan -->
         <section class="cta-section">
-            <h2>Prêt à commencer votre préparation ?</h2>
-            <p>Rejoignez des milliers d'apprenants qui progressent chaque jour</p>
-            <button class="btn-primary btn-large">Créer mon compte gratuit</button>
+            <!-- IMAGE 3 : Arrière-plan atmosphérique -->
+            <img
+                src="https://images.unsplash.com/photo-1513085745570-040d273d7e6f?w=1600&q=80"
+                alt="Une salle de classe lumineuse avec des livres et des fournitures scolaires, représentant un environnement d'apprentissage du français"
+                class="cta-bg-image"
+            >
+            <div class="cta-overlay"></div>
+            <div class="cta-content">
+                <h2>Prêt à commencer votre préparation ?</h2>
+                <p>Rejoignez des milliers d'apprenants qui progressent chaque jour</p>
+                <button class="btn-primary btn-large">Créer mon compte gratuit</button>
+            </div>
         </section>
+
     </main>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer>
         <div class="footer-content">
             <div class="author-block">
@@ -190,5 +212,15 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        const currentLang = document.documentElement.lang;
+        document.querySelectorAll('.lang-option').forEach(option => {
+            if (option.dataset.lang === currentLang) {
+                option.classList.add('active');
+            }
+        });
+    </script>
+
 </body>
-</html>
+</html> 

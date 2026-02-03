@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion – Prépa TCF</title>
+    <meta name="description" content="Connectez-vous ou créez votre compte sur Prépa TCF pour suivre votre progression.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_auth.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="main-fr.html">Accueil</a></li>
+                <li><a href="quiz.html">Leçons</a></li>
+                <li><a href="exercices.html">Exercices</a></li>
+                <li>
+                    <div class="lang-switcher">
+                        <a href="main-fr.html" class="lang-option" data-lang="fr">FR</a>
+                        <span class="lang-divider">|</span>
+                        <a href="main-en.html" class="lang-option" data-lang="en">EN</a>
+                    </div>
+                </li>
+                <li><button type="button" class="btn-login">Connexion</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+        <section class="auth-section">
+            <div class="auth-container">
+
+                <!-- IMAGE côté gauche -->
+                <div class="auth-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1491750296711-ca938ed752c7?w=900&q=80"
+                        alt="Un étudiant motivé qui se prépare à un examen de français avec des livres et un ordinateur"
+                        loading="lazy"
+                    >
+                    <div class="auth-image-overlay"></div>
+                    <div class="auth-image-text">
+                        <h2>Commencez votre parcours aujourd'hui</h2>
+                        <p>Rejoignez plus de 10 000 apprenants qui préparent leur TCF avec nous.</p>
+                    </div>
+                </div>
+
+                <!-- FORMULAIRES côté droit -->
+                <div class="auth-forms">
+
+                    <!-- Tabs : Connexion / Créer un compte -->
+                    <div class="auth-tabs">
+                        <button class="auth-tab active" data-tab="login">Connexion</button>
+                        <button class="auth-tab" data-tab="register">Créer un compte</button>
+                    </div>
+
+                    <!-- FORMULAIRE CONNEXION -->
+                    <form class="auth-form" id="form-login">
+                        <div class="form-group">
+                            <label for="login-email">Email</label>
+                            <div class="input-wrapper">
+                                <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                <input type="email" id="login-email" name="email" placeholder="votre@email.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="login-password">Mot de passe</label>
+                            <div class="input-wrapper">
+                                <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                                <input type="password" id="login-password" name="password" placeholder="Votre mot de passe" required>
+                                <button type="button" class="toggle-password" aria-label="Afficher le mot de passe">
+                                    <svg class="eye-icon show" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                    <svg class="eye-icon hide" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><line x1="1" y1="1" x2="23" y2="23"></line><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"></path><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"></path></svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-group form-row">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="remember">
+                                <span class="checkbox-custom"></span>
+                                Rester connecté
+                            </label>
+                            <a href="#" class="forgot-link">Mot de passe oublié ?</a>
+                        </div>
+
+                        <button type="submit" class="btn-primary btn-full">Se connecter</button>
+
+                        <div class="auth-divider">
+                            <span>ou</span>
+                        </div>
+
+                        <button type="button" class="btn-google">
+                            <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                            Continuer avec Google
+                        </button>
+
+                        <p class="auth-switch">
+                            Pas de compte ? <button type="button" class="switch-tab" data-target="register">Créer un compte</button>
+                        </p>
+                    </form>
+
+                    <!-- FORMULAIRE CRÉATION DE COMPTE -->
+                    <form class="auth-form" id="form-register" style="display: none;">
+                        <div class="form-row-two">
+                            <div class="form-group">
+                                <label for="reg-firstname">Prénom</label>
+                                <div class="input-wrapper">
+                                    <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="8" r="4"></circle></svg>
+                                    <input type="text" id="reg-firstname" name="firstname" placeholder="Jean" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="reg-lastname">Nom</label>
+                                <div class="input-wrapper">
+                                    <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="8" r="4"></circle></svg>
+                                    <input type="text" id="reg-lastname" name="lastname" placeholder="Dupont" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reg-email">Email</label>
+                            <div class="input-wrapper">
+                                <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                <input type="email" id="reg-email" name="email" placeholder="votre@email.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reg-password">Mot de passe</label>
+                            <div class="input-wrapper">
+                                <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                                <input type="password" id="reg-password" name="password" placeholder="Créez un mot de passe" required>
+                                <button type="button" class="toggle-password" aria-label="Afficher le mot de passe">
+                                    <svg class="eye-icon show" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                    <svg class="eye-icon hide" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><line x1="1" y1="1" x2="23" y2="23"></line><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"></path><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"></path></svg>
+                                </button>
+                            </div>
+                            <!-- Indicateur de force du mot de passe -->
+                            <div class="password-strength">
+                                <div class="strength-bar"></div>
+                                <span class="strength-label">Minimum 8 caractères</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reg-level">Votre niveau actuel</label>
+                            <div class="input-wrapper select-wrapper">
+                                <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                <select id="reg-level" name="level">
+                                    <option value="" disabled selected>Sélectionnez un niveau</option>
+                                    <option value="a1">A1 – Débutant</option>
+                                    <option value="a2">A2 – Élémentaire</option>
+                                    <option value="b1">B1 – Intermédiaire</option>
+                                    <option value="b2">B2 – Intermédiaire avancé</option>
+                                    <option value="c1">C1 – Avancé</option>
+                                    <option value="c2">C2 – Maîtrise</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <label class="checkbox-label checkbox-terms">
+                            <input type="checkbox" name="terms" required>
+                            <span class="checkbox-custom"></span>
+                            <span>J'accepte les <a href="#" class="terms-link">conditions d'utilisation</a> et la <a href="#" class="terms-link">politique de confidentialité</a></span>
+                        </label>
+
+                        <button type="submit" class="btn-primary btn-full">Créer mon compte</button>
+
+                        <div class="auth-divider">
+                            <span>ou</span>
+                        </div>
+
+                        <button type="button" class="btn-google">
+                            <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                            Continuer avec Google
+                        </button>
+
+                        <p class="auth-switch">
+                            Déjà un compte ? <button type="button" class="switch-tab" data-target="login">Se connecter</button>
+                        </p>
+                    </form>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="author-block">
+                <p>Créé par <strong>MOHAMMEDI Noureddine</strong></p>
+            </div>
+            <div class="footer-links">
+                <a href="#about">À propos</a>
+                <a href="#contact">Contact</a>
+                <a href="#privacy">Mentions légales</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ── Lang switcher ──
+        const currentLang = document.documentElement.lang;
+        document.querySelectorAll('.lang-option').forEach(option => {
+            if (option.dataset.lang === currentLang) option.classList.add('active');
+        });
+
+        // ── Tabs Connexion / Créer un compte ──
+        const authTabs   = document.querySelectorAll('.auth-tab');
+        const formLogin  = document.getElementById('form-login');
+        const formRegister = document.getElementById('form-register');
+
+        function switchForm(target) {
+            authTabs.forEach(t => t.classList.remove('active'));
+            document.querySelector(`.auth-tab[data-tab="${target}"]`).classList.add('active');
+
+            if (target === 'login') {
+                formLogin.style.display  = 'flex';
+                formRegister.style.display = 'none';
+            } else {
+                formLogin.style.display  = 'none';
+                formRegister.style.display = 'flex';
+            }
+        }
+
+        authTabs.forEach(tab => {
+            tab.addEventListener('click', () => switchForm(tab.dataset.tab));
+        });
+
+        // liens texte "Créer un compte" / "Se connecter" dans les formulaires
+        document.querySelectorAll('.switch-tab').forEach(link => {
+            link.addEventListener('click', () => switchForm(link.dataset.target));
+        });
+
+        // ── Toggle visibilité mot de passe ──
+        document.querySelectorAll('.toggle-password').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const input  = btn.closest('.input-wrapper').querySelector('input[type="password"], input[type="text"]');
+                const iconShow = btn.querySelector('.eye-icon.show');
+                const iconHide = btn.querySelector('.eye-icon.hide');
+
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    iconShow.style.display = 'none';
+                    iconHide.style.display = 'block';
+                } else {
+                    input.type = 'password';
+                    iconShow.style.display = 'block';
+                    iconHide.style.display = 'none';
+                }
+            });
+        });
+
+        // ── Indicateur de force du mot de passe ──
+        const regPassword   = document.getElementById('reg-password');
+        const strengthBar   = document.querySelector('.strength-bar');
+        const strengthLabel = document.querySelector('.strength-label');
+
+        if (regPassword) {
+            regPassword.addEventListener('input', () => {
+                const val = regPassword.value;
+                let score = 0;
+
+                if (val.length >= 8)                          score++;
+                if (/[a-z]/.test(val) && /[A-Z]/.test(val))  score++;
+                if (/[0-9]/.test(val))                        score++;
+                if (/[^a-zA-Z0-9]/.test(val))                score++;
+
+                strengthBar.className = 'strength-bar';
+                if (score <= 1) {
+                    strengthBar.classList.add('weak');
+                    strengthLabel.textContent = 'Faible';
+                } else if (score === 2) {
+                    strengthBar.classList.add('fair');
+                    strengthLabel.textContent = 'Acceptable';
+                } else if (score === 3) {
+                    strengthBar.classList.add('good');
+                    strengthLabel.textContent = 'Bon';
+                } else {
+                    strengthBar.classList.add('strong');
+                    strengthLabel.textContent = 'Excellent';
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
