@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leçons – Prépa TCF</title>
-    <meta name="description" content="Parcourez toutes nos leçons de français organisées par niveau et par compétence pour préparer le TCF.">
+    <title>Quiz – Prépa TCF</title>
+    <meta name="description" content="Testez vos connaissances avec nos quiz interactifs en grammaire, conjugaison, compréhension orale et écrite.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
         <nav>
             <ul>
                 <li><a href="main-fr.html">Accueil</a></li>
-                <li><a href="quiz.html" class="nav-active">Leçons</a></li>
+                <li><a href="quiz.html" class="nav-active">Quiz</a></li>
                 <li><a href="exercices.html">Exercices</a></li>
                 <li>
                     <div class="lang-switcher">
@@ -27,7 +27,7 @@
                         <a href="main-en.html" class="lang-option" data-lang="en">EN</a>
                     </div>
                 </li>
-                <li><button type="button" class="btn-login">Connexion</button></li>
+                <li><button type="button" class="btn-login" onclick="window.location='login.html'">Connexion</button></li>
             </ul>
         </nav>
     </header>
@@ -35,210 +35,213 @@
     <!-- MAIN -->
     <main>
 
-        <!-- PAGE HERO -->
-        <section class="page-hero">
-            <div class="page-hero-content">
-                <span class="page-hero-label">Catalogue</span>
-                <h1>Leçons</h1>
-                <p>Apprenez le français à votre rythme avec nos leçons structurées, du niveau A1 à C2.</p>
-            </div>
-        </section>
-
-        <!-- FILTRES DE NIVEAU -->
-        <section class="filters-section">
-            <div class="filters-container">
-                <button class="filter-btn active" data-filter="all">Tous les niveaux</button>
-                <button class="filter-btn" data-filter="a1">A1</button>
-                <button class="filter-btn" data-filter="a2">A2</button>
-                <button class="filter-btn" data-filter="b1">B1</button>
-                <button class="filter-btn" data-filter="b2">B2</button>
-                <button class="filter-btn" data-filter="c1">C1</button>
-                <button class="filter-btn" data-filter="c2">C2</button>
-            </div>
-        </section>
-
-        <!-- LEÇON MISE EN AVANT -->
-        <section class="featured-lesson">
-            <div class="featured-inner">
-                <div class="featured-image">
-                    <img
-                        src="https://images.unsplash.com/photo-1491750296711-ca938ed752c7?w=800&q=80"
-                        alt="Un livre de grammaire française ouvert sur une table, représentant le début d'une leçon de français"
-                        loading="lazy"
-                    >
-                    <span class="featured-badge">Populaire</span>
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <!-- ÉTAPE 1 : SÉLECTION CATÉGORIE + NIVEAU -->
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <section class="quiz-setup" id="quiz-setup">
+            <div class="setup-container">
+                <div class="setup-header">
+                    <h1>Commencer un quiz</h1>
+                    <p>Sélectionnez une catégorie et un niveau pour démarrer</p>
                 </div>
-                <div class="featured-text">
-                    <span class="lesson-level">A1 — Débutant</span>
-                    <h2>Introduction à la grammaire de base</h2>
-                    <p>
-                        Maîtrisez les fondamentaux de la grammaire française : les articles,
-                        les pronoms sujets, le présent de l'indicatif et les structures de phrases essentielles.
-                    </p>
-                    <div class="featured-meta">
-                        <span class="meta-item">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                            12 minutes
-                        </span>
-                        <span class="meta-item">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-1H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-1h7z"></path></svg>
-                            5 exercices
-                        </span>
-                        <span class="meta-item">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
-                            2 341 élèves
-                        </span>
+
+                <!-- Catégories -->
+                <div class="setup-section">
+                    <h2>Catégorie</h2>
+                    <div class="category-grid">
+                        <button class="category-card" data-category="grammaire">
+                            <span class="category-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                                </svg>
+                            </span>
+                            <h3>Grammaire</h3>
+                            <p>Articles, pronoms, structures</p>
+                        </button>
+
+                        <button class="category-card" data-category="conjugaison">
+                            <span class="category-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 20h9"></path>
+                                    <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                                </svg>
+                            </span>
+                            <h3>Conjugaison</h3>
+                            <p>Temps et modes verbaux</p>
+                        </button>
+
+                        <button class="category-card" data-category="vocabulaire">
+                            <span class="category-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-1H2z"></path>
+                                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-1h7z"></path>
+                                </svg>
+                            </span>
+                            <h3>Vocabulaire</h3>
+                            <p>Mots et expressions</p>
+                        </button>
+
+                        <button class="category-card" data-category="comprehension">
+                            <span class="category-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                                </svg>
+                            </span>
+                            <h3>Compréhension</h3>
+                            <p>Textes et dialogues</p>
+                        </button>
                     </div>
-                    <button class="btn-primary">Démarrer la leçon</button>
+                </div>
+
+                <!-- Niveaux -->
+                <div class="setup-section">
+                    <h2>Niveau</h2>
+                    <div class="level-grid">
+                        <button class="level-btn" data-level="A1">A1<span>Débutant</span></button>
+                        <button class="level-btn" data-level="A2">A2<span>Élémentaire</span></button>
+                        <button class="level-btn" data-level="B1">B1<span>Intermédiaire</span></button>
+                        <button class="level-btn" data-level="B2">B2<span>Avancé</span></button>
+                        <button class="level-btn" data-level="C1">C1<span>Autonome</span></button>
+                        <button class="level-btn" data-level="C2">C2<span>Maîtrise</span></button>
+                    </div>
+                </div>
+
+                <!-- Bouton Démarrer -->
+                <button class="btn-primary btn-large" id="btn-start-quiz" disabled>
+                    Démarrer le quiz
+                </button>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <!-- ÉTAPE 2 : QUIZ EN COURS -->
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <section class="quiz-active" id="quiz-active" style="display: none;">
+            <div class="quiz-container">
+
+                <!-- Header avec progression -->
+                <div class="quiz-header">
+                    <div class="quiz-info">
+                        <span class="quiz-category-label" id="current-category">Grammaire</span>
+                        <span class="quiz-level-label" id="current-level">A1</span>
+                    </div>
+                    <button class="btn-quit" id="btn-quit">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                        Quitter
+                    </button>
+                </div>
+
+                <!-- Barre de progression -->
+                <div class="progress-section">
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="progress-bar"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span id="progress-current">1</span> / <span id="progress-total">25</span>
+                    </div>
+                </div>
+
+                <!-- Question -->
+                <div class="question-card" id="question-card">
+                    <h2 class="question-text" id="question-text">Quelle est la bonne réponse ?</h2>
+
+                    <!-- Choix de réponses -->
+                    <div class="answers-grid" id="answers-grid">
+                        <!-- Les réponses seront injectées ici par JS -->
+                    </div>
+
+                    <!-- Zone de feedback (apparaît après réponse) -->
+                    <div class="feedback-zone" id="feedback-zone" style="display: none;">
+                        <div class="feedback-icon" id="feedback-icon"></div>
+                        <div class="feedback-content">
+                            <h3 id="feedback-title">Correct !</h3>
+                            <p id="feedback-explanation">Explication de la réponse...</p>
+                        </div>
+                    </div>
+
+                    <!-- Bouton Suivant (apparaît après réponse) -->
+                    <button class="btn-primary btn-next" id="btn-next" style="display: none;">
+                        Question suivante
+                    </button>
                 </div>
             </div>
         </section>
 
-        <!-- GRILLE DE LEÇONS -->
-        <section class="lessons-grid-section">
-            <div class="lessons-grid">
-
-                <!-- Carte 1 -->
-                <article class="lesson-card" data-level="a1">
-                    <div class="lesson-card-top">
-                        <span class="lesson-level">A1</span>
-                        <span class="lesson-duration">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                            8 min
-                        </span>
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <!-- ÉTAPE 3 : RÉSULTATS -->
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <section class="quiz-results" id="quiz-results" style="display: none;">
+            <div class="results-container">
+                <div class="results-header">
+                    <div class="results-icon">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
                     </div>
-                    <h3>Les articles définis et indéfinis</h3>
-                    <p>Apprenez à utiliser correctement "le, la, les, un, une, des" dans vos phrases.</p>
-                    <a href="#" class="lesson-link">Voir la leçon</a>
-                </article>
+                    <h1>Quiz terminé !</h1>
+                    <p class="results-subtitle">Voici vos résultats</p>
+                </div>
 
-                <!-- Carte 2 -->
-                <article class="lesson-card" data-level="a1">
-                    <div class="lesson-card-top">
-                        <span class="lesson-level">A1</span>
-                        <span class="lesson-duration">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                            10 min
-                        </span>
+                <!-- Score principal -->
+                <div class="score-display">
+                    <div class="score-circle">
+                        <svg class="score-svg" width="180" height="180">
+                            <circle class="score-bg" cx="90" cy="90" r="75"></circle>
+                            <circle class="score-fill" id="score-circle" cx="90" cy="90" r="75"></circle>
+                        </svg>
+                        <div class="score-text">
+                            <span class="score-number" id="score-percentage">80</span>
+                            <span class="score-label">%</span>
+                        </div>
                     </div>
-                    <h3>Les pronoms sujets</h3>
-                    <p>Maîtrisez je, tu, il, elle, nous, vous, ils, elles et leur utilisation.</p>
-                    <a href="#" class="lesson-link">Voir la leçon</a>
-                </article>
-
-                <!-- Carte 3 -->
-                <article class="lesson-card" data-level="a2">
-                    <div class="lesson-card-top">
-                        <span class="lesson-level">A2</span>
-                        <span class="lesson-duration">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                            15 min
-                        </span>
+                    <div class="score-details">
+                        <p><strong id="score-correct">20</strong> / <span id="score-total">25</span> bonnes réponses</p>
                     </div>
-                    <h3>Le passé composé</h3>
-                    <p>Formez des phrases au passé avec "avoir" et "être" comme auxiliaires.</p>
-                    <a href="#" class="lesson-link">Voir la leçon</a>
-                </article>
+                </div>
 
-                <!-- Carte 4 -->
-                <article class="lesson-card" data-level="a2">
-                    <div class="lesson-card-top">
-                        <span class="lesson-level">A2</span>
-                        <span class="lesson-duration">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                            12 min
-                        </span>
+                <!-- Détails -->
+                <div class="results-stats">
+                    <div class="stat-item">
+                        <div class="stat-icon correct">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </div>
+                        <span class="stat-label">Correctes</span>
+                        <span class="stat-value" id="stat-correct">20</span>
                     </div>
-                    <h3>Les questions en "est-ce que"</h3>
-                    <p>Formez des questions simples et complexes pour la communication quotidienne.</p>
-                    <a href="#" class="lesson-link">Voir la leçon</a>
-                </article>
-
-                <!-- Carte 5 -->
-                <article class="lesson-card" data-level="b1">
-                    <div class="lesson-card-top">
-                        <span class="lesson-level">B1</span>
-                        <span class="lesson-duration">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                            18 min
-                        </span>
+                    <div class="stat-item">
+                        <div class="stat-icon incorrect">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </div>
+                        <span class="stat-label">Incorrectes</span>
+                        <span class="stat-value" id="stat-incorrect">5</span>
                     </div>
-                    <h3>Le subjonctif présent</h3>
-                    <p>Utilisez le subjonctif dans les expressions de volonté, de doute et d'émotion.</p>
-                    <a href="#" class="lesson-link">Voir la leçon</a>
-                </article>
+                </div>
 
-                <!-- Carte 6 -->
-                <article class="lesson-card" data-level="b1">
-                    <div class="lesson-card-top">
-                        <span class="lesson-level">B1</span>
-                        <span class="lesson-duration">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                            20 min
-                        </span>
+                <!-- Points d'amélioration -->
+                <div class="improvement-section">
+                    <h3>Points d'amélioration</h3>
+                    <div class="improvement-list" id="improvement-list">
+                        <!-- Injecté par JS -->
                     </div>
-                    <h3>Le conditionnel présent</h3>
-                    <p>Exprimez des souhaits, des hypothèses et des suggestions avec le conditionnel.</p>
-                    <a href="#" class="lesson-link">Voir la leçon</a>
-                </article>
+                </div>
 
-                <!-- Carte 7 -->
-                <article class="lesson-card" data-level="b2">
-                    <div class="lesson-card-top">
-                        <span class="lesson-level">B2</span>
-                        <span class="lesson-duration">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                            22 min
-                        </span>
-                    </div>
-                    <h3>Les propositions relatives</h3>
-                    <p>Enrichissez votre expression avec les relatifs qui, que, dont, où.</p>
-                    <a href="#" class="lesson-link">Voir la leçon</a>
-                </article>
-
-                <!-- Carte 8 -->
-                <article class="lesson-card" data-level="c1">
-                    <div class="lesson-card-top">
-                        <span class="lesson-level">C1</span>
-                        <span class="lesson-duration">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                            25 min
-                        </span>
-                    </div>
-                    <h3>Le style indirect</h3>
-                    <p>Rapportez des paroles et des questions avec les bonnes concordances de temps.</p>
-                    <a href="#" class="lesson-link">Voir la leçon</a>
-                </article>
-
-                <!-- Carte 9 -->
-                <article class="lesson-card" data-level="c2">
-                    <div class="lesson-card-top">
-                        <span class="lesson-level">C2</span>
-                        <span class="lesson-duration">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                            30 min
-                        </span>
-                    </div>
-                    <h3>La concession et la nuance</h3>
-                    <p>Maîtrisez les structures avancées pour exprimer la nuance et la concession.</p>
-                    <a href="#" class="lesson-link">Voir la leçon</a>
-                </article>
-
-            </div>
-        </section>
-
-        <!-- CTA FINAL -->
-        <section class="cta-section">
-            <img
-                src="https://images.unsplash.com/photo-1513085745570-040d273d7e6f?w=1600&q=80"
-                alt="Une salle de classe lumineuse avec des livres et des fournitures scolaires"
-                class="cta-bg-image"
-            >
-            <div class="cta-overlay"></div>
-            <div class="cta-content">
-                <h2>Envie de vous tester ?</h2>
-                <p>Passez aux exercices pratiques et évaluez ce que vous avez appris.</p>
-                <a href="exercices.html" class="btn-primary btn-large">Vers les exercices</a>
+                <!-- Actions -->
+                <div class="results-actions">
+                    <button class="btn-primary" id="btn-restart">Recommencer un quiz</button>
+                    <button class="btn-secondary" onclick="window.location='exercices.html'">Aller aux exercices</button>
+                </div>
             </div>
         </section>
 
@@ -258,36 +261,7 @@
         </div>
     </footer>
 
-    <!-- JS : filtres de niveau -->
-    <script>
-        // Lang switcher
-        const currentLang = document.documentElement.lang;
-        document.querySelectorAll('.lang-option').forEach(option => {
-            if (option.dataset.lang === currentLang) option.classList.add('active');
-        });
-
-        // Filtres de niveau
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const lessonCards = document.querySelectorAll('.lesson-card');
-
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // activer le bouton cliqué
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-
-                const level = btn.dataset.filter;
-
-                lessonCards.forEach(card => {
-                    if (level === 'all' || card.dataset.level === level) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
-        });
-    </script>
+    <script src="quiz.js"></script>
 
 </body>
 </html>

@@ -18,7 +18,7 @@
         <nav>
             <ul>
                 <li><a href="main-fr.html">Accueil</a></li>
-                <li><a href="quiz.html">Leçons</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
                 <li><a href="exercices.html" class="nav-active">Exercices</a></li>
                 <li>
                     <div class="lang-switcher">
@@ -27,7 +27,7 @@
                         <a href="main-en.html" class="lang-option" data-lang="en">EN</a>
                     </div>
                 </li>
-                <li><button type="button" class="btn-login">Connexion</button></li>
+                <li><a href="login.html" class="btn-login">Connexion</a></li>
             </ul>
         </nav>
     </header>
@@ -75,7 +75,7 @@
             <div class="featured-ex-inner">
                 <div class="featured-ex-image">
                     <img
-                        src="https://images.unsplash.com/photo-1468533344113-50a2e8a08fb8?w=800&q=80"
+                        src="./images/student-studying.jpg"
                         alt="Des feuilles de papier avec des exercices de français écris à la main, représentant la pratique de la grammaire française"
                         loading="lazy"
                     >
@@ -247,7 +247,7 @@
         <!-- CTA FINAL -->
         <section class="cta-section">
             <img
-                src="https://images.unsplash.com/photo-1513085745570-040d273d7e6f?w=1600&q=80"
+                src="./images/learning_env.jpg"
                 alt="Une salle de classe lumineuse avec des livres et des fournitures scolaires"
                 class="cta-bg-image"
             >
@@ -255,7 +255,7 @@
             <div class="cta-content">
                 <h2>Prêt à vous évaluer ?</h2>
                 <p>Créez un compte pour sauvegarder votre progression et accéder à tous les exercices.</p>
-                <button class="btn-primary btn-large">Créer mon compte gratuit</button>
+                <a href="register.html" class="btn-primary">Créer mon compte gratuit</a>
             </div>
         </section>
 
@@ -274,36 +274,7 @@
             </div>
         </div>
     </footer>
-
-    <!-- JS : filtres catégories -->
-    <script>
-        // Lang switcher
-        const currentLang = document.documentElement.lang;
-        document.querySelectorAll('.lang-option').forEach(option => {
-            if (option.dataset.lang === currentLang) option.classList.add('active');
-        });
-
-        // Filtres catégories (tabs)
-        const tabBtns = document.querySelectorAll('.tab-btn');
-        const exCards = document.querySelectorAll('.exercise-card');
-
-        tabBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                tabBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-
-                const cat = btn.dataset.category;
-
-                exCards.forEach(card => {
-                    if (cat === 'all' || card.dataset.category === cat) {
-                        card.style.display = 'flex';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
-        });
-    </script>
+    <script src="exercices.js"></script>
 
 </body>
 </html>

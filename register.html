@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créer un compte – Prépa TCF</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_auth.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="main-fr.html">Accueil</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="exercices.html">Exercices</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="auth-section">
+            <div class="auth-container">
+                <div class="auth-image">
+                    <img src="./images/tcf-etude.png" alt="Inscription" loading="lazy">
+                    <div class="auth-image-overlay"></div>
+                    <div class="auth-image-text">
+                        <h2>Prêt à réussir ?</h2>
+                        <p>Créez votre compte pour suivre votre progression gratuitement.</p>
+                    </div>
+                </div>
+
+                <div class="auth-forms">
+                    <div class="auth-tabs">
+                        <button class="auth-tab" data-tab="login" id="tab-login-btn">Connexion</button>
+                        <button class="auth-tab active" data-tab="register" id="tab-register-btn">Créer un compte</button>
+                    </div>
+
+                    <form class="auth-form" id="form-login" style="display: none;">
+                        <div class="form-group">
+                            <label>Email</label>
+                            <div class="input-wrapper"><input type="email" placeholder="votre@email.com"></div>
+                        </div>
+                        <div class="form-group">
+                            <label>Mot de passe</label>
+                            <div class="input-wrapper">
+                                <input type="password" placeholder="Mot de passe">
+                                <button type="button" class="toggle-password">👁️</button>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-primary btn-full">Se connecter</button>
+                        <p class="auth-switch">Pas de compte ? <button type="button" class="switch-tab" data-target="register">Créer un compte</button></p>
+                    </form>
+
+                    <form class="auth-form" id="form-register" style="display: flex;">
+                        <div class="form-row-two">
+                            <div class="form-group">
+                                <label>Prénom</label>
+                                <div class="input-wrapper"><input type="text" name="firstname" required></div>
+                            </div>
+                            <div class="form-group">
+                                <label>Nom</label>
+                                <div class="input-wrapper"><input type="text" name="lastname" required></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <div class="input-wrapper"><input type="email" name="email" required></div>
+                        </div>
+                        <div class="form-group">
+                            <label>Mot de passe</label>
+                            <div class="input-wrapper">
+                                <input type="password" id="reg-password" name="password" required>
+                                <button type="button" class="toggle-password">👁️</button>
+                            </div>
+                            <div class="password-strength">
+                                <div class="strength-bar"></div>
+                                <span class="strength-label">Minimum 8 caractères</span>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-primary btn-full">Créer mon compte</button>
+                        <p class="auth-switch">Déjà un compte ? <button type="button" class="switch-tab" data-target="login">Se connecter</button></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="global.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>

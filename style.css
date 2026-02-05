@@ -99,6 +99,8 @@ nav ul li:nth-last-child(2) {
     border-radius: 30px;
     transition: all 0.3s ease;
     letter-spacing: 0.5px;
+    text-decoration:none; 
+    display:inline-block;
 }
 
 .btn-login:hover {
@@ -156,6 +158,8 @@ nav ul li:nth-last-child(2) {
     cursor: pointer;
     transition: all 0.3s ease;
     letter-spacing: 0.5px;
+    text-decoration:none; 
+    display:inline-block
 }
 
 .btn-primary:hover {

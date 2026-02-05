@@ -17,7 +17,7 @@
         <nav>
             <ul>
                 <li><a href="main-fr.html">Accueil</a></li>
-                <li><a href="quiz.html">Leçons</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
                 <li><a href="exercices.html">Exercices</a></li>
                 <li>
                     <div class="lang-switcher">
@@ -26,7 +26,7 @@
                         <a href="main-en.html" class="lang-option" data-lang="en">EN</a>
                     </div>
                 </li>
-                <li><button type="button" class="btn-login">Connexion</button></li>
+                <li><a href="login.html" class="btn-login">Connexion</a></li>
             </ul>
         </nav>
     </header>
@@ -40,8 +40,8 @@
                 <h1>Préparation au TCF</h1>
                 <p class="hero-subtitle">Entraînement structuré du niveau A1 à C2</p>
                 <div class="hero-cta">
-                    <button class="btn-primary">Commencer gratuitement</button>
-                    <button class="btn-secondary">Découvrir les exercices</button>
+                    <a href="register.html" class="btn-primary">Commencer gratuitement</a>
+                    <a href="exercices.html" class="btn-secondary">Découvrir les exercices</a>
                 </div>
             </div>
         </section>
@@ -160,7 +160,7 @@
                 <div class="image-content">
                     <!-- IMAGE 2 : Interface / workspace -->
                     <img
-                        src="https://images.unsplash.com/photo-1593506338-a385935cd131?w=800&q=80"
+                        src="./images/plateform_en_ligne.png"
                         alt="Un bureau de travail propre avec un ordinateur portable affichant une interface d'apprentissage en ligne, représentant l'expérience utilisateur de la plateforme"
                         class="demo-image"
                         loading="lazy"
@@ -176,7 +176,7 @@
                         personnalisé pour comprendre vos erreurs. Une pratique régulière est
                         la meilleure façon de progresser rapidement et de gagner en confiance.
                     </p>
-                    <a href="#exercises" class="link-cta">Explorer les exercices</a>
+                    <a href="exercices.html" class="link-cta">Explorer les exercices</a>
                 </div>
             </div>
         </section>
@@ -185,7 +185,7 @@
         <section class="cta-section">
             <!-- IMAGE 3 : Arrière-plan atmosphérique -->
             <img
-                src="https://images.unsplash.com/photo-1513085745570-040d273d7e6f?w=1600&q=80"
+                src="./images/learning_env.jpg"
                 alt="Une salle de classe lumineuse avec des livres et des fournitures scolaires, représentant un environnement d'apprentissage du français"
                 class="cta-bg-image"
             >
@@ -193,7 +193,7 @@
             <div class="cta-content">
                 <h2>Prêt à commencer votre préparation ?</h2>
                 <p>Rejoignez des milliers d'apprenants qui progressent chaque jour</p>
-                <button class="btn-primary btn-large">Créer mon compte gratuit</button>
+                <a href="register.html" class="btn-primary btn-large">Créer mon compte gratuit</a>
             </div>
         </section>
 
@@ -213,14 +213,7 @@
         </div>
     </footer>
 
-    <script>
-        const currentLang = document.documentElement.lang;
-        document.querySelectorAll('.lang-option').forEach(option => {
-            if (option.dataset.lang === currentLang) {
-                option.classList.add('active');
-            }
-        });
-    </script>
+    <script src="global.js"></script>
 
 </body>
 </html> 
