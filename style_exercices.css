@@ -1,421 +1,282 @@
-/* ==================== NAV ACTIVE LINK ==================== */
-nav ul li a.nav-active {
-    color: #111111;
-    font-weight: 700;
-    border-bottom: 2px solid #111111;
-    padding-bottom: 4px;
-}
+/* ═══════════════════════════════════════════════════════════
+   EXERCICES - VERSION COMPACTE AVEC ICÔNES
+   ═══════════════════════════════════════════════════════════ */
 
-/* ==================== PAGE HERO ==================== */
-.page-hero {
-    background: #fafafa;
-    border-bottom: 1px solid #e5e5e5;
-    padding: 80px 40px 70px;
-    text-align: center;
-}
-
-.page-hero-content {
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-.page-hero-label {
-    display: inline-block;
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #757575;
-    margin-bottom: 1.2rem;
-}
-
-.page-hero h1 {
-    font-size: 3.2rem;
-    font-weight: 700;
-    color: #111111;
-    letter-spacing: -1px;
-    line-height: 1.1;
-    margin-bottom: 1.2rem;
-}
-
-.page-hero p {
-    font-size: 1.15rem;
-    color: #757575;
-    font-weight: 400;
-    line-height: 1.7;
-}
-
-/* ==================== TABS CATÉGORIES ==================== */
-.tabs-section {
-    padding: 28px 40px;
-    border-bottom: 1px solid #e5e5e5;
-    background: #ffffff;
-    position: sticky;
-    top: 65px;
-    z-index: 900;
-}
-
-.tabs-container {
+/* Section exercices */
+.exercises-section {
     max-width: 1400px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    flex-wrap: wrap;
-}
-
-.tab-btn {
-    font-family: inherit;
-    font-size: 0.88rem;
-    font-weight: 500;
-    letter-spacing: 0.3px;
-    color: #757575;
-    background: #f5f5f5;
-    border: 1px solid #e5e5e5;
-    border-radius: 30px;
-    padding: 10px 22px;
-    cursor: pointer;
-    transition: all 0.25s ease;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.tab-btn svg {
-    flex-shrink: 0;
-    transition: color 0.25s ease;
-}
-
-.tab-btn:hover {
-    border-color: #111111;
-    color: #111111;
-}
-
-.tab-btn:hover svg {
-    color: #111111;
-}
-
-.tab-btn.active {
-    background: #111111;
-    color: #ffffff;
-    border-color: #111111;
-}
-
-.tab-btn.active svg {
-    color: #ffffff;
-}
-
-/* ==================== EXERCICE MIS EN AVANT ==================== */
-.featured-exercise {
-    max-width: 1400px;
-    margin: 60px auto 0;
-    padding: 0 40px;
-}
-
-.featured-ex-inner {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 0;
-    border: 1px solid #e5e5e5;
-    background: #ffffff;
-    overflow: hidden;
-}
-
-/* image côté gauche */
-.featured-ex-image {
-    position: relative;
-    min-height: 420px;
-}
-
-.featured-ex-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.featured-badge {
-    position: absolute;
-    top: 24px;
-    left: 24px;
-    background: #111111;
-    color: #ffffff;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    padding: 6px 14px;
-    border-radius: 30px;
-}
-
-/* texte côté droit */
-.featured-ex-text {
-    padding: 60px 56px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1rem;
-}
-
-.ex-meta-row {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-/* badge catégorie */
-.ex-category-tag {
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
-    color: #757575;
-    background: #f0f0f0;
-    padding: 5px 12px;
-    border-radius: 4px;
-}
-
-/* badge difficulté */
-.ex-difficulty {
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    padding: 4px 10px;
-    border-radius: 4px;
-}
-
-.ex-difficulty.easy {
-    background: #f0fdf4;
-    color: #16a34a;
-}
-
-.ex-difficulty.medium {
-    background: #fefce8;
-    color: #ca8a04;
-}
-
-.ex-difficulty.hard {
-    background: #fef2f2;
-    color: #dc2626;
-}
-
-/* level label */
-.ex-level-label {
-    font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: #757575;
-}
-
-.featured-ex-text h2 {
-    font-size: 2.1rem;
-    font-weight: 700;
-    color: #111111;
-    letter-spacing: -0.5px;
-    line-height: 1.2;
-}
-
-.featured-ex-text p {
-    font-size: 1.05rem;
-    color: #757575;
-    line-height: 1.75;
-}
-
-/* stats row */
-.ex-stats {
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-}
-
-.stat-item {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 0.88rem;
-    color: #757575;
-    font-weight: 500;
-}
-
-.stat-item svg {
-    flex-shrink: 0;
-    color: #111111;
-}
-
-/* ==================== GRILLE D'EXERCICES ==================== */
-.exercises-grid-section {
-    max-width: 1400px;
-    margin: 60px auto 80px;
+    margin: 40px auto 60px;
     padding: 0 40px;
 }
 
 .exercises-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
 }
+
+/* ═══════════════════════════════════════════════════════════
+   CARTE D'EXERCICE COMPACTE
+   ═══════════════════════════════════════════════════════════ */
 
 .exercise-card {
     background: #ffffff;
-    border: 1px solid #e5e5e5;
-    padding: 2rem;
+    border: 1.5px solid #e5e5e5;
+    border-radius: 12px;
+    padding: 1.5rem;
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
     gap: 0.85rem;
+    min-height: 220px;
+    position: relative;
 }
 
 .exercise-card:hover {
     background: #fafafa;
+    border-color: #111111;
     transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
 }
 
-/* ligne supérieure : catégorie + difficulté */
-.ex-card-header {
+/* Icône SVG en haut */
+.card-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f9fa;
+    border-radius: 10px;
+    margin-bottom: 0.25rem;
+}
+
+.card-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+/* Header : catégorie + niveau */
+.card-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 0.5rem;
 }
 
-/* titre + description */
-.exercise-card h3 {
-    font-size: 1.1rem;
+.card-category {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #757575;
+}
+
+.card-level {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #ffffff;
+    background: #111111;
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+
+/* Titre */
+.card-title {
+    font-size: 1.05rem;
     font-weight: 600;
     color: #111111;
-    letter-spacing: -0.2px;
-    line-height: 1.4;
+    letter-spacing: -0.3px;
+    line-height: 1.3;
+    margin: 0;
 }
 
-.exercise-card p {
-    font-size: 0.92rem;
+/* Description */
+.card-description {
+    font-size: 0.88rem;
     color: #757575;
-    line-height: 1.6;
+    line-height: 1.5;
+    margin: 0;
     flex-grow: 1;
 }
 
-/* pied de carte : meta + bouton */
-.ex-card-footer {
+/* Footer : difficulté + bouton */
+.card-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 0.75rem;
     margin-top: auto;
-    padding-top: 0.8rem;
+    padding-top: 0.75rem;
     border-top: 1px solid #f0f0f0;
 }
 
-.ex-card-meta {
-    font-size: 0.82rem;
-    color: #757575;
-    font-weight: 500;
+.card-difficulty {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 20px;
 }
 
-/* bouton petit "Commencer" */
+/* Badges difficulté */
+.badge-easy {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.badge-medium {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.badge-hard {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* Bouton Commencer */
 .btn-start {
-    font-family: inherit;
+    font-family: 'Montserrat', sans-serif;
     font-size: 0.85rem;
     font-weight: 600;
     color: #111111;
-    background: #f5f5f5;
-    border: 1px solid #e5e5e5;
-    border-radius: 30px;
+    background: transparent;
+    border: 1.5px solid #111111;
     padding: 8px 20px;
+    border-radius: 30px;
     cursor: pointer;
     transition: all 0.25s ease;
-    letter-spacing: 0.3px;
+    white-space: nowrap;
 }
 
 .btn-start:hover {
     background: #111111;
     color: #ffffff;
-    border-color: #111111;
+    transform: translateX(4px);
 }
 
-/* ==================== RESPONSIVE ==================== */
-@media (max-width: 1024px) {
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════════ */
+
+@media (max-width: 1200px) {
     .exercises-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .featured-ex-inner {
-        grid-template-columns: 1fr;
-    }
-
-    .featured-ex-image {
-        min-height: 300px;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     }
 }
 
 @media (max-width: 768px) {
-    .page-hero {
-        padding: 60px 20px 50px;
+    .exercises-section {
+        padding: 0 24px;
+        margin: 30px auto 40px;
     }
-
-    .page-hero h1 {
-        font-size: 2.2rem;
-    }
-
-    .tabs-section {
-        padding: 20px 20px;
-        top: 58px;
-    }
-
-    .tab-btn {
-        font-size: 0.82rem;
-        padding: 8px 16px;
-    }
-
-    .featured-exercise,
-    .exercises-grid-section {
-        padding: 0 20px;
-        margin-left: 0;
-        margin-right: 0;
-        max-width: 100%;
-    }
-
-    .featured-ex-text {
-        padding: 40px 28px;
-    }
-
-    .featured-ex-text h2 {
-        font-size: 1.7rem;
-    }
-
+    
     .exercises-grid {
         grid-template-columns: 1fr;
-        gap: 1.2rem;
+        gap: 1.25rem;
+    }
+    
+    .exercise-card {
+        min-height: 200px;
     }
 }
 
 @media (max-width: 480px) {
-    .page-hero h1 {
-        font-size: 1.8rem;
+    .exercises-section {
+        padding: 0 20px;
     }
-
-    .featured-ex-text {
-        padding: 32px 22px;
+    
+    .card-footer {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
     }
-
-    .featured-ex-text h2 {
-        font-size: 1.4rem;
+    
+    .btn-start {
+        width: 100%;
+        text-align: center;
     }
+}
 
-    .ex-stats {
-        gap: 1rem;
+/* ═══════════════════════════════════════════════════════════
+   FILTRES
+   ═══════════════════════════════════════════════════════════ */
+
+.filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filter-btn {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #757575;
+    background: #fafafa;
+    border: 1.5px solid #e5e5e5;
+    padding: 10px 24px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    letter-spacing: 0.3px;
+}
+
+.filter-btn:hover {
+    background: #f0f0f0;
+    color: #111111;
+    border-color: #d1d5db;
+}
+
+.filter-btn.active {
+    background: #111111;
+    color: #ffffff;
+    border-color: #111111;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   PAGE HEADER
+   ═══════════════════════════════════════════════════════════ */
+
+.page-header {
+    text-align: center;
+    padding: 60px 20px 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #111111;
+    letter-spacing: -1px;
+    margin-bottom: 1rem;
+}
+
+.page-header p {
+    font-size: 1.05rem;
+    color: #757575;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .page-header {
+        padding: 40px 20px 30px;
     }
-
-    .tabs-container {
-        gap: 0.4rem;
+    
+    .page-header h1 {
+        font-size: 2rem;
     }
-
-    .tab-btn {
-        font-size: 0.78rem;
-        padding: 7px 12px;
-    }
-
-    .tab-btn svg {
-        display: none;   /* cacher les icônes sur très petit écran */
+    
+    .page-header p {
+        font-size: 0.95rem;
     }
 }

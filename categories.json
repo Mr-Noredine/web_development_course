@@ -1,0 +1,53 @@
+{
+  "exam": "TCF",
+  "language": "fr",
+  "levels": ["A1","A2","B1","B2","C1","C2"],
+  "categories": [
+    {
+      "id": "grammar",
+      "name": "Grammaire",
+      "subcategories": [
+        {"id":"articles","name":"Articles"},
+        {"id":"pronouns","name":"Pronoms"},
+        {"id":"prepositions","name":"Prépositions"},
+        {"id":"negation","name":"Négation"},
+        {"id":"agreement","name":"Accords"},
+        {"id":"tenses","name":"Temps"}
+      ]
+    },
+    {
+      "id": "conjugation",
+      "name": "Conjugaison",
+      "subcategories": [
+        {"id":"present","name":"Présent"},
+        {"id":"passe_compose","name":"Passé composé"},
+        {"id":"imparfait","name":"Imparfait"},
+        {"id":"futur","name":"Futur"},
+        {"id":"subjonctif","name":"Subjonctif"},
+        {"id":"conditionnel","name":"Conditionnel"}
+      ]
+    },
+    {
+      "id": "vocabulary",
+      "name": "Vocabulaire",
+      "subcategories": [
+        {"id":"daily_life","name":"Vie quotidienne"},
+        {"id":"travel","name":"Voyage"},
+        {"id":"health","name":"Santé"},
+        {"id":"education","name":"Éducation"},
+        {"id":"work","name":"Travail"},
+        {"id":"society","name":"Société"}
+      ]
+    },
+    {
+      "id": "reading_comprehension",
+      "name": "Compréhension écrite",
+      "subcategories": [
+        {"id":"short_notice","name":"Panneau / Avis"},
+        {"id":"email_message","name":"E-mail / Message"},
+        {"id":"form_admin","name":"Formulaire"},
+        {"id":"article_excerpt","name":"Extrait d’article"}
+      ]
+    }
+  ]
+}

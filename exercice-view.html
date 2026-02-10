@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz en cours – Prépa TCF</title>
-    <meta name="description" content="Répondez aux questions du quiz TCF.">
+    <title>Exercice – Prépa TCF</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="quiz_start.css">
+    <link rel="stylesheet" href="style_exercise_view.css">
 </head>
 <body>
 
@@ -18,8 +17,8 @@
         <nav>
             <ul>
                 <li><a href="main-fr.html">Accueil</a></li>
-                <li><a href="quiz.html" class="nav-active">Quiz</a></li>
-                <li><a href="exercices.html">Exercices</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="exercices.html" class="nav-active">Exercices</a></li>
                 <li>
                     <div class="lang-switcher">
                         <a href="main-fr.html" class="lang-option" data-lang="fr">FR</a>
@@ -36,26 +35,16 @@
     <main>
 
         <!-- ═══════════════════════════════════════════════════════ -->
-        <!-- CHARGEMENT INITIAL -->
+        <!-- EXERCISE VIEW -->
         <!-- ═══════════════════════════════════════════════════════ -->
-        <section class="quiz-loading" id="quiz-loading">
-            <div class="loading-container">
-                <div class="spinner"></div>
-                <p>Chargement de votre quiz...</p>
-            </div>
-        </section>
-
-        <!-- ═══════════════════════════════════════════════════════ -->
-        <!-- QUIZ EN COURS -->
-        <!-- ═══════════════════════════════════════════════════════ -->
-        <section class="quiz-active" id="quiz-active" style="display: none;">
-            <div class="quiz-container">
+        <section class="exercise-view">
+            <div class="exercise-container">
 
                 <!-- Header avec progression -->
-                <div class="quiz-header">
-                    <div class="quiz-info">
-                        <span class="quiz-category-label" id="current-category">Grammaire</span>
-                        <span class="quiz-level-label" id="current-level">A1</span>
+                <div class="exercise-header">
+                    <div class="exercise-info">
+                        <span class="exercise-category-label" id="category-label">Grammaire</span>
+                        <span class="exercise-level-label" id="level-label">A1</span>
                     </div>
                     <button class="btn-quit" id="btn-quit">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -72,17 +61,23 @@
                         <div class="progress-bar" id="progress-bar"></div>
                     </div>
                     <div class="progress-text">
-                        <span id="progress-current">1</span> / <span id="progress-total">25</span>
+                        Question <span id="progress-current">1</span> / <span id="progress-total">10</span>
                     </div>
+                </div>
+
+                <!-- Contexte (si présent) -->
+                <div class="context-box" id="context-box" style="display: none;">
+                    <h3>📖 Contexte</h3>
+                    <p id="context-text"></p>
                 </div>
 
                 <!-- Question -->
                 <div class="question-card" id="question-card">
-                    <h2 class="question-text" id="question-text">Chargement de la question...</h2>
+                    <h2 class="question-text" id="question-text">Chargement...</h2>
 
-                    <!-- Choix de réponses -->
-                    <div class="answers-grid" id="answers-grid">
-                        <!-- Les réponses seront injectées ici par JS -->
+                    <!-- Zone de réponse (varie selon le type) -->
+                    <div class="answer-zone" id="answer-zone">
+                        <!-- Injecté par JS selon le type -->
                     </div>
 
                     <!-- Zone de feedback (apparaît après réponse) -->
@@ -90,7 +85,7 @@
                         <div class="feedback-icon" id="feedback-icon"></div>
                         <div class="feedback-content">
                             <h3 id="feedback-title">Correct !</h3>
-                            <p id="feedback-explanation">Explication de la réponse...</p>
+                            <p id="feedback-explanation">Explication...</p>
                         </div>
                     </div>
 
@@ -105,7 +100,7 @@
         <!-- ═══════════════════════════════════════════════════════ -->
         <!-- RÉSULTATS -->
         <!-- ═══════════════════════════════════════════════════════ -->
-        <section class="quiz-results" id="quiz-results" style="display: none;">
+        <section class="exercise-results" id="exercise-results" style="display: none;">
             <div class="results-container">
                 <div class="results-header">
                     <div class="results-icon">
@@ -114,11 +109,11 @@
                             <polyline points="22 4 12 14.01 9 11.01"></polyline>
                         </svg>
                     </div>
-                    <h1>Quiz terminé !</h1>
+                    <h1>Exercice terminé !</h1>
                     <p class="results-subtitle">Voici vos résultats</p>
                 </div>
 
-                <!-- Score principal -->
+                <!-- Score -->
                 <div class="score-display">
                     <div class="score-circle">
                         <svg class="score-svg" width="180" height="180">
@@ -131,11 +126,11 @@
                         </div>
                     </div>
                     <div class="score-details">
-                        <p><strong id="score-correct">20</strong> / <span id="score-total">25</span> bonnes réponses</p>
+                        <p><strong id="score-correct">8</strong> / <span id="score-total">10</span> bonnes réponses</p>
                     </div>
                 </div>
 
-                <!-- Détails -->
+                <!-- Stats -->
                 <div class="results-stats">
                     <div class="stat-item">
                         <div class="stat-icon correct">
@@ -144,7 +139,7 @@
                             </svg>
                         </div>
                         <span class="stat-label">Correctes</span>
-                        <span class="stat-value" id="stat-correct">20</span>
+                        <span class="stat-value" id="stat-correct">8</span>
                     </div>
                     <div class="stat-item">
                         <div class="stat-icon incorrect">
@@ -154,13 +149,13 @@
                             </svg>
                         </div>
                         <span class="stat-label">Incorrectes</span>
-                        <span class="stat-value" id="stat-incorrect">5</span>
+                        <span class="stat-value" id="stat-incorrect">2</span>
                     </div>
                 </div>
 
                 <!-- Points d'amélioration -->
                 <div class="improvement-section">
-                    <h3>Points d'amélioration</h3>
+                    <h3>À réviser</h3>
                     <div class="improvement-list" id="improvement-list">
                         <!-- Injecté par JS -->
                     </div>
@@ -168,27 +163,9 @@
 
                 <!-- Actions -->
                 <div class="results-actions">
-                    <button class="btn-primary" id="btn-restart">Recommencer un quiz</button>
-                    <button class="btn-secondary" onclick="window.location='exercices.html'">Aller aux exercices</button>
+                    <button class="btn-primary" onclick="window.location='exercices.html'">Autres exercices</button>
+                    <button class="btn-secondary" onclick="window.location='quiz.html'">Faire un quiz</button>
                 </div>
-            </div>
-        </section>
-
-        <!-- ═══════════════════════════════════════════════════════ -->
-        <!-- ERREUR -->
-        <!-- ═══════════════════════════════════════════════════════ -->
-        <section class="quiz-error" id="quiz-error" style="display: none;">
-            <div class="error-container">
-                <div class="error-icon">
-                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <line x1="12" y1="8" x2="12" y2="12"></line>
-                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
-                    </svg>
-                </div>
-                <h2>Aucun exercice disponible</h2>
-                <p id="error-message">Désolé, il n'y a pas encore d'exercices pour cette catégorie et ce niveau.</p>
-                <button class="btn-primary" onclick="window.location='quiz.html'">Retour à la sélection</button>
             </div>
         </section>
 
@@ -208,9 +185,7 @@
         </div>
     </footer>
 
-    <script src="./categories.js"></script>
-    <script src="./items.js"></script>
-    <script src="quiz_start.js"></script>
+    <script src="exercice-view.js"></script>
 
 </body>
 </html>
