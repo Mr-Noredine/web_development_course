@@ -9,6 +9,7 @@ import ExerciceView from './pages/ExerciceView/ExerciceView';
 import Quiz from './pages/Quiz/Quiz';
 import QuizActive from './pages/QuizActive/QuizActive';
 import QuizResults from './pages/QuizResults/QuizResults';
+import Dashboard from './pages/Dashboard/Dashboard';
 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
@@ -40,14 +41,14 @@ function App() {
         <Route path="/quiz/results" element={<QuizResults />} />
         
         {/* Protected routes (require login) */}
-        {/* <Route 
+        <Route 
           path="/dashboard" 
           element={
             <ProtectedRoute>
               <Dashboard />
             </ProtectedRoute>
           } 
-        /> */}
+        />
         
         {/* 404 */}
         <Route path="*" element={<Navigate to="/" replace />} />

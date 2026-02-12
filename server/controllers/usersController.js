@@ -119,3 +119,125 @@ export const getUserStats = async (req, res) => {
     });
   }
 };
+
+// Get progress timeline (last 30 days)
+export const getProgressTimeline = async (req, res) => {
+  try {
+    const userId = req.user.id;
+
+    const query = `
+      SELECT 
+        DATE(completed_at) as date,
+        COUNT(*) as total_attempts,
+        AVG(percentage) as avg_score,
+        SUM(CASE WHEN percentage >= 70 THEN 1 ELSE 0 END) as successful_attempts
+      FROM exercise_attempts
+      WHERE user_id = $1
+        AND completed_at >= CURRENT_DATE - INTERVAL '30 days'
+      GROUP BY DATE(completed_at)
+      ORDER BY date ASC
+    `;
+
+    const result = await pool.query(query, [userId]);
+
+    res.json({
+      success: true,
+      data: result.rows
+    });
+  } catch (error) {
+    console.error('Error fetching progress timeline:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Erreur lors de la récupération de la progression'
+    });
+  }
+};
+
+// Get recommendations based on performance
+export const getRecommendations = async (req, res) => {
+  try {
+    const userId = req.user.id;
+
+    // Get weak areas (categories with < 60% success rate)
+    const weakAreasQuery = `
+      SELECT 
+        c.name,
+        c.slug,
+        up.level,
+        up.average_score,
+        up.completed_exercises,
+        up.total_exercises
+      FROM user_progress up
+      JOIN categories c ON up.category_id = c.id
+      WHERE up.user_id = $1
+        AND up.average_score < 60
+        AND up.completed_exercises > 0
+      ORDER BY up.average_score ASC
+      LIMIT 3
+    `;
+
+    // Get strong areas (categories with >= 80% success rate)
+    const strongAreasQuery = `
+      SELECT 
+        c.name,
+        c.slug,
+        up.level,
+        up.average_score,
+        up.completed_exercises
+      FROM user_progress up
+      JOIN categories c ON up.category_id = c.id
+      WHERE up.user_id = $1
+        AND up.average_score >= 80
+        AND up.completed_exercises > 0
+      ORDER BY up.average_score DESC
+      LIMIT 3
+    `;
+
+    // Get suggested next level
+    const nextLevelQuery = `
+      SELECT 
+        c.name,
+        c.slug,
+        up.level,
+        up.average_score,
+        up.completed_exercises,
+        up.total_exercises
+      FROM user_progress up
+      JOIN categories c ON up.category_id = c.id
+      WHERE up.user_id = $1
+        AND up.average_score >= 75
+        AND up.completed_exercises >= (up.total_exercises * 0.8)
+      ORDER BY 
+        CASE up.level
+          WHEN 'A1' THEN 1
+          WHEN 'A2' THEN 2
+          WHEN 'B1' THEN 3
+          WHEN 'B2' THEN 4
+          WHEN 'C1' THEN 5
+          WHEN 'C2' THEN 6
+        END ASC
+      LIMIT 3
+    `;
+
+    const [weakAreas, strongAreas, nextLevel] = await Promise.all([
+      pool.query(weakAreasQuery, [userId]),
+      pool.query(strongAreasQuery, [userId]),
+      pool.query(nextLevelQuery, [userId])
+    ]);
+
+    res.json({
+      success: true,
+      data: {
+        weakAreas: weakAreas.rows,
+        strongAreas: strongAreas.rows,
+        nextLevel: nextLevel.rows
+      }
+    });
+  } catch (error) {
+    console.error('Error fetching recommendations:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Erreur lors de la récupération des recommandations'
+    });
+  }
+};

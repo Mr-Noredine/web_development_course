@@ -28,6 +28,13 @@ const Header = () => {
               Exercices
             </Link>
           </li>
+          {user && (
+            <li>
+              <Link to="/dashboard" className={isActive('/dashboard')}>
+                Dashboard
+              </Link>
+            </li>
+          )}
 
           {/* Language switcher */}
           <li className="lang-switcher">
