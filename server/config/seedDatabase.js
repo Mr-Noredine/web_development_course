@@ -1,7 +1,7 @@
 import pool from './database.js';
 import fs from 'fs/promises';
 import path from 'path';
-import { fileURLToPath, pathToFileURL } from 'url';
+import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -123,10 +123,7 @@ const seedDatabase = async () => {
 };
 
 // Exécuter si appelé directement
-const isDirectRun =
-  process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href;
-
-if (isDirectRun) {
+if (import.meta.url === `file://${process.argv[1]}`) {
   seedDatabase()
     .then(() => process.exit(0))
     .catch((err) => {

@@ -1,5 +1,4 @@
 import pool from './database.js';
-import { pathToFileURL } from "url";
 
 const setupDatabase = async () => {
   const client = await pool.connect();
@@ -110,9 +109,7 @@ const setupDatabase = async () => {
 };
 
 // Exécuter si appelé directement
-const isDirectRun = import.meta.url === pathToFileURL(process.argv[1]).href;
-
-if (isDirectRun) {
+if (import.meta.url === `file://${process.argv[1]}`) {
   setupDatabase()
     .then(() => process.exit(0))
     .catch((err) => {
@@ -120,4 +117,5 @@ if (isDirectRun) {
       process.exit(1);
     });
 }
+
 export default setupDatabase;
